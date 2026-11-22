@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex" />
+<meta name="theme-color" content="#070a1c" />
+<title>Gate Tidak Ditemukan - 404 | Shadow Monarch's Quadratic Dungeon</title>
+<link rel="icon" href="/icons/icon-192.png" />
+<style>*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#070a1c;color:#e8ecff;font-family:system-ui,-apple-system,'Segoe UI',Roboto,sans-serif}
+body{min-height:100vh;display:grid;place-items:center;padding:20px;overflow-x:hidden;background:radial-gradient(ellipse at 50% 30%,#1a1250 0,#070a1c 62%)}
+.win{position:relative;width:min(520px,100%);padding:32px 22px;text-align:center;border:1px solid #9a5aff;border-radius:14px;background:rgba(14,12,44,.82);box-shadow:0 0 34px rgba(154,90,255,.4),inset 0 0 24px rgba(0,229,255,.08);overflow:hidden}
+.win:after{content:"";position:absolute;left:0;right:0;height:2px;top:0;background:linear-gradient(90deg,transparent,#00e5ff,transparent);animation:scan 3s linear infinite}
+@keyframes scan{to{transform:translateY(420px)}}
+.tag{font:700 .75rem/1 monospace;letter-spacing:.14em;color:#00e5ff}
+.seal{width:130px;height:130px;margin:18px auto 6px;display:block;animation:spin 16s linear infinite;filter:drop-shadow(0 0 12px #9a5aff)}
+@keyframes spin{to{transform:rotate(360deg)}}
+h1{margin:6px 0 4px;font-size:clamp(2.6rem,14vw,4.4rem);letter-spacing:.06em;color:#fff;text-shadow:0 0 18px #9a5aff,0 0 36px #00e5ff}
+h2{margin:0 0 10px;font-size:1.15rem;color:#c9b6ff}
+p{margin:0 0 20px;color:#aab3e0;line-height:1.55;font-size:.95rem}
+a.btn{display:inline-block;padding:12px 22px;border-radius:10px;background:linear-gradient(90deg,#7b3dff,#00b8d9);color:#fff;font-weight:700;text-decoration:none;box-shadow:0 0 18px rgba(154,90,255,.55)}
+a.btn:focus-visible{outline:3px solid #fff;outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.seal,.win:after{animation:none}}
+</style>
+</head>
+<body>
+<main class="win" role="main">
+  <small class="tag">[ SYSTEM ] ERROR</small>
+  <svg class="seal" viewBox="0 0 120 120" aria-hidden="true" fill="none" stroke="#9a5aff" stroke-width="2">
+    <circle cx="60" cy="60" r="54"/><circle cx="60" cy="60" r="42" stroke="#00e5ff"/>
+    <polygon points="60,10 105,85 15,85" /><polygon points="60,110 15,35 105,35" stroke="#00e5ff"/>
+    <path d="M44 74Q60 30 76 74" stroke="#fff"/>
+  </svg>
+  <h1>404</h1>
+  <h2 id="t">Gate Tidak Ditemukan</h2>
+  <p id="d">Gerbang yang kamu tuju sudah runtuh atau tidak pernah ada. Kembali ke Guild dan pilih dungeon lain, Hunter.</p>
+  <a class="btn" href="/" id="b">Kembali ke Guild</a>
+</main>
+<script>(function(){
+  var L={id:['Gate Tidak Ditemukan','Gerbang yang kamu tuju sudah runtuh atau tidak pernah ada. Kembali ke Guild dan pilih dungeon lain, Hunter.','Kembali ke Guild'],
+  en:['Gate Not Found','The gate you seek has collapsed or never existed. Return to the Guild and choose another dungeon, Hunter.','Back to the Guild'],
+  ja:['ゲートが見つかりません','探していたゲートは崩壊したか、存在しません。ギルドに戻り、別のダンジョンを選びましょう。','ギルドへ戻る'],
+  ko:['게이트를 찾을 수 없습니다','찾던 게이트는 무너졌거나 존재하지 않습니다. 길드로 돌아가 다른 던전을 고르세요, 헌터.','길드로 돌아가기']};
+  var k='id';
+  try{var s=(localStorage.getItem('ad_lang')||navigator.language||'id').slice(0,2).toLowerCase();if(L[s])k=s;}catch(e){}
+  document.documentElement.lang=k;
+  document.getElementById('t').textContent=L[k][0];
+  document.getElementById('d').textContent=L[k][1];
+  document.getElementById('b').textContent=L[k][2];
+  document.title=L[k][0]+' - 404';
+})();
+</script>
+</body>
+</html>

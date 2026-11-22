@@ -1,0 +1,166 @@
+'use strict';
+
+window.G247 = {
+  adv_name: ['Guild System Advisor', 'Guild System Advisor', 'ギルドシステムアドバイザー', '길드 시스템 어드바이저'],
+  adv_title: ['System Advisor Briefing', 'System Advisor Briefing', 'システムアドバイザー・ブリーフィング', '시스템 어드바이저 브리핑'],
+  adv_hint: ['Klik untuk membuka briefing kelas', 'Click to open the class briefing', 'クリックしてクラスのブリーフィングを開く', '클릭하여 학급 브리핑 열기'],
+  adv_close: ['Tutup briefing', 'Close briefing', 'ブリーフィングを閉じる', '브리핑 닫기'],
+  adv_refresh: ['Perbarui analisis', 'Refresh analysis', '分析を更新', '분석 새로고침'],
+  adv_load: ['Menganalisis data kelas...', 'Analyzing class data...', 'クラスのデータを分析中...', '학급 데이터를 분석하는 중...'],
+  adv_scope: ['Kelas aktif: %c%', 'Active class: %c%', '対象クラス: %c%', '대상 학급: %c%'],
+  adv_all: ['Semua kelas', 'All classes', 'すべてのクラス', '모든 학급'],
+  adv_empty: [
+    'Belum ada siswa terdaftar di kelas ini. Bagikan Kode Akses Guru dan minta siswa mendaftar lewat akun cloud.',
+    'No students are registered in this class yet. Share the access code and ask students to sign up with a cloud account.',
+    'このクラスにはまだ登録された生徒がいません。生徒にクラウドアカウントで登録してもらってください。',
+    '이 학급에는 아직 등록된 학생이 없습니다. 학생들에게 클라우드 계정으로 가입하도록 안내하세요.',
+  ],
+  adv_pre: ['Pretest', 'Pretest', '事前テスト', '사전 테스트'],
+  adv_post: ['Posttest', 'Posttest', '事後テスト', '사후 테스트'],
+  adv_done: ['%a% dari %n% siswa sudah selesai, %b% belum.', '%a% of %n% students finished, %b% have not.', '%n%人中%a%人が完了、%b%人が未完了です。', '%n%명 중 %a%명 완료, %b%명 미완료입니다.'],
+  adv_sec_test: ['Pretest & Posttest', 'Pretest & Posttest', '事前・事後テスト', '사전·사후 테스트'],
+  adv_sec_rank: ['Materi perlu dibahas ulang', 'Topic to revisit in class', 'クラスで復習すべき単元', '수업에서 다시 다룰 단원'],
+  adv_sec_wb: ['World Boss Raid', 'World Boss Raid', 'ワールドボスレイド', '월드 보스 레이드'],
+  adv_sec_rec: ['Rekomendasi pengajaran', 'Teaching recommendations', '指導のおすすめ', '수업 권장 사항'],
+  adv_rank_low: [
+    '%r% (%t%) punya rata-rata skor terendah: %s% dari %k% siswa yang menyelesaikannya.',
+    '%r% (%t%) has the lowest average score: %s% across %k% students who completed it.',
+    '%r%（%t%）の平均スコアが最も低く、完了した%k%人の平均は%s%です。',
+    '%r%(%t%)의 평균 점수가 가장 낮으며, 완료한 %k%명 기준 %s%점입니다.',
+  ],
+  adv_rank_none: [
+    'Belum ada Rank yang diselesaikan siswa, jadi belum ada materi yang bisa dibandingkan.',
+    'No Rank has been completed yet, so there is nothing to compare.',
+    'まだ完了したランクがないため、比較できる単元はありません。',
+    '아직 완료한 랭크가 없어 비교할 단원이 없습니다.',
+  ],
+  adv_wb_on: [
+    '%n% sesi aktif: %names%.',
+    '%n% active session(s): %names%.',
+    '進行中のセッション: %n%件（%names%）。',
+    '진행 중인 세션 %n%개: %names%.',
+  ],
+  adv_wb_hp: ['Sisa HP Boss %p%%.', 'Boss HP remaining: %p%%.', 'ボスの残りHP: %p%%。', '보스 남은 HP: %p%%.'],
+  adv_wb_off: [
+    'Tidak ada sesi World Boss aktif. Buka menu World Boss Raid untuk memulai kuis kolaboratif.',
+    'No World Boss session is active. Open World Boss Raid to start a collaborative quiz.',
+    '進行中のワールドボスセッションはありません。ワールドボスレイドから協力クイズを始められます。',
+    '진행 중인 월드 보스 세션이 없습니다. 월드 보스 레이드 메뉴에서 협동 퀴즈를 시작하세요.',
+  ],
+  adv_rec_pre: [
+    'Ingatkan %n% siswa untuk menyelesaikan Pretest sebelum materi dimulai.',
+    'Remind %n% student(s) to complete the Pretest before the lessons begin.',
+    '授業を始める前に、%n%人の生徒に事前テストを完了するよう促してください。',
+    '수업을 시작하기 전에 %n%명의 학생에게 사전 테스트를 완료하도록 안내하세요.',
+  ],
+  adv_rec_post: [
+    'Dorong %n% siswa untuk mengerjakan Posttest agar N-Gain kelas bisa dihitung.',
+    'Encourage %n% student(s) to take the Posttest so the class N-Gain can be calculated.',
+    '学級のN-gainを算出するため、%n%人の生徒に事後テストの受験を促してください。',
+    '학급 N-Gain을 계산할 수 있도록 %n%명의 학생에게 사후 테스트 응시를 권장하세요.',
+  ],
+  adv_rec_rank: [
+    'Sisihkan 10 menit di awal pertemuan untuk membahas ulang %r% sebelum lanjut ke materi baru.',
+    'Set aside 10 minutes at the start of the next session to revisit %r% before moving on.',
+    '次の授業の冒頭10分を使って%r%を復習してから、新しい単元に進みましょう。',
+    '다음 수업 시작 10분을 활용해 %r%를 복습한 뒤 새 단원으로 넘어가세요.',
+  ],
+  adv_rec_wb: [
+    'Jalankan World Boss Raid sebagai penutup pertemuan untuk menguji pemahaman sekelas.',
+    'Run a World Boss Raid at the end of the session to check the whole class.',
+    '授業の締めくくりにワールドボスレイドを行い、クラス全体の理解度を確認しましょう。',
+    '수업 마무리에 월드 보스 레이드를 진행해 학급 전체의 이해도를 점검하세요.',
+  ],
+  adv_rec_ok: [
+    'Data kelas sudah lengkap. Lanjutkan dengan soal pengayaan atau diskusi Rapor Iceberg.',
+    'Class data looks complete. Continue with enrichment problems or discuss the Iceberg report.',
+    'クラスのデータは揃っています。発展問題やIcebergレポートの検討に進みましょう。',
+    '학급 데이터가 모두 갖춰졌습니다. 심화 문제나 Iceberg 리포트 토론으로 이어가세요.',
+  ],
+
+  gh_tag: ['PANDUAN', 'GUIDE', 'ガイド', '가이드'],
+  gh_title: ['Panduan Komando Guru (Guild Master Manual)', 'Guild Master Manual (Teacher Command Guide)', 'ギルドマスター・マニュアル（教師用コマンドガイド）', '길드 마스터 매뉴얼 (교사 지휘 가이드)'],
+  gh_i1: [
+    '<b>Pantau Rekap Nilai, N-Gain, dan Rapor 4 Lapisan Iceberg</b> di menu <b>Kelas</b> dan <b>Analisis</b>. Klik nama siswa untuk melihat Spider Analysis individu dibandingkan rata-rata kelas.',
+    '<b>Track the score recap, N-Gain, and the 4-layer Iceberg report</b> in the <b>Class</b> and <b>Analysis</b> menus. Click a student to compare their Spider Analysis with the class average.',
+    '<b>成績まとめ、N-gain、Iceberg 4層レポート</b>は<b>クラス</b>と<b>分析</b>メニューで確認します。生徒名をクリックすると、スパイダー分析をクラス平均と比較できます。',
+    '<b>성적 현황, N-Gain, Iceberg 4층 리포트</b>는 <b>학급</b>과 <b>분석</b> 메뉴에서 확인합니다. 학생을 클릭하면 스파이더 분석을 학급 평균과 비교할 수 있습니다.',
+  ],
+  gh_i2: [
+    '<b>Awasi aktivitas siswa secara real-time</b> di menu <b>Monitor Live</b>, lalu kirim pengumuman kelas lewat formulir pengumuman.',
+    '<b>Watch student activity in real time</b> in <b>Live Monitor</b>, then send class announcements from the announcement form.',
+    '<b>生徒の活動をリアルタイムで見守る</b>には<b>ライブモニター</b>を使い、お知らせフォームからクラスに連絡を送ります。',
+    '<b>학생 활동을 실시간으로 확인</b>하려면 <b>라이브 모니터</b>를 사용하고, 공지 양식으로 학급 공지를 보내세요.',
+  ],
+  gh_i3: [
+    '<b>Jalankan kuis kolaboratif sekelas</b> di menu <b>World Boss Raid</b>: pilih Boss, tentukan kelas, lalu seluruh siswa menyerang bersama.',
+    '<b>Run a whole-class collaborative quiz</b> in <b>World Boss Raid</b>: pick a Boss, choose the class, and let everyone attack together.',
+    '<b>クラス全員の協力クイズ</b>は<b>ワールドボスレイド</b>で行います。ボスとクラスを選ぶと、全員で一斉に攻撃できます。',
+    '<b>학급 전체 협동 퀴즈</b>는 <b>월드 보스 레이드</b>에서 진행합니다. 보스와 학급을 고르면 모두가 함께 공격합니다.',
+  ],
+  gh_i4: [
+    '<b>Buat misi atau latihan soal mandiri</b> di menu <b>Buat Red Gate Baru</b>, lalu periksa kunci dan pembahasan di menu <b>Jawaban</b>.',
+    '<b>Create independent missions or practice sets</b> in <b>Create New Red Gate</b>, then check the answer keys and explanations in <b>Answers</b>.',
+    '<b>独自のミッションや練習問題</b>は<b>新しいレッドゲートを作成</b>で作り、解答と解説は<b>解答</b>メニューで確認します。',
+    '<b>자체 미션과 연습 문제</b>는 <b>새 레드 게이트 만들기</b>에서 만들고, 정답과 해설은 <b>답안</b> 메뉴에서 확인하세요.',
+  ],
+  gh_i5: [
+    '<b>Ekspor rekap CSV</b> dan <b>Laporan Akademik siap cetak PDF</b> dari menu Kelas, atau cetak Transkrip Evaluasi per siswa dari Monitor Live.',
+    '<b>Export the CSV recap</b> and the <b>print-ready PDF Academic Report</b> from the Class menu, or print each student’s Evaluation Transcript from Live Monitor.',
+    '<b>CSVの集計</b>と<b>印刷用PDFの学習レポート</b>はクラスメニューから出力でき、生徒ごとの評価成績証明書はライブモニターから印刷できます。',
+    '<b>CSV 집계</b>와 <b>인쇄용 PDF 학업 리포트</b>는 학급 메뉴에서 내보내고, 학생별 평가 성적 증명서는 라이브 모니터에서 출력하세요.',
+  ],
+  gh_i6: [
+    'Klik kristal <b>Guild System Advisor</b> di pojok kanan bawah kapan saja untuk ringkasan otomatis kelas aktif.',
+    'Click the <b>Guild System Advisor</b> crystal at the bottom right at any time for an automatic summary of the active class.',
+    '右下の<b>ギルドシステムアドバイザー</b>のクリスタルをクリックすると、対象クラスの自動サマリーをいつでも見られます。',
+    '오른쪽 아래의 <b>길드 시스템 어드바이저</b> 크리스탈을 클릭하면 대상 학급의 자동 요약을 언제든 볼 수 있습니다.',
+  ],
+  gh_cur: ['Struktur Kurikulum Iceberg RME (Rank E–S)', 'Iceberg RME Curriculum Structure (Rank E–S)', 'Iceberg RMEカリキュラム構成（ランクE〜S）', 'Iceberg RME 교육과정 구조 (랭크 E–S)'],
+  gh_c_rank: ['RANK', 'RANK', 'ランク', '랭크'],
+  gh_c_topic: ['TOPIK', 'TOPIC', 'トピック', '주제'],
+  gh_c_focus: ['FOKUS BELAJAR', 'LEARNING FOCUS', '学習の焦点', '학습 초점'],
+  gh_c_xp: ['XP', 'XP', 'XP', 'XP'],
+  gh_f_E: ['Mengenali transformasi fungsi induk dan titik puncak', 'Recognizing transformations of the parent function and the vertex', '母関数の変換と頂点を読み取る', '기본 함수의 변환과 꼭짓점 알아보기'],
+  gh_f_D: ['Menggambar grafik dari bentuk vertex', 'Sketching the graph from vertex form', '頂点形式からグラフを描く', '꼭짓점 형태에서 그래프 그리기'],
+  gh_f_C: ['Membaca arah bukaan dan sumbu simetri dari bentuk standar', 'Reading opening direction and axis of symmetry from standard form', '標準形式から開く向きと対称軸を読み取る', '표준형에서 열리는 방향과 대칭축 읽기'],
+  gh_f_B: ['Menemukan akar dan hubungan p, q pada bentuk faktor', 'Finding roots and the role of p and q in factored form', '因数形式で解とp、qの関係を見つける', '인수분해형에서 근과 p, q의 관계 찾기'],
+  gh_f_A: ['Menghubungkan tiga bentuk fungsi kuadrat', 'Connecting the three forms of a quadratic function', '二次関数の3つの形式を結び付ける', '이차함수의 세 가지 형태 연결하기'],
+  gh_f_S: ['Membuat sketsa dan menjelaskan semua unsur parabola', 'Sketching and explaining every feature of the parabola', '放物線のすべての要素をスケッチして説明する', '포물선의 모든 요소를 스케치하고 설명하기'],
+  gh_layers: [
+    'Setiap Rank melewati 4 lapisan Iceberg: Kontekstual, Model Situasi, Model Formal, lalu Matematika Formal.',
+    'Every Rank passes through the 4 Iceberg layers: Contextual, Situation Model, Formal Model, then Formal Mathematics.',
+    '各ランクはIcebergの4層（文脈、状況モデル、形式モデル、形式数学）を順に進みます。',
+    '모든 랭크는 Iceberg의 4개 층(맥락, 상황 모델, 형식 모델, 형식 수학)을 차례로 거칩니다.',
+  ],
+  gh_ng: ['Kriteria Kategori N-Gain Hake', 'Hake N-Gain Category Criteria', 'Hake式N-gainのカテゴリ基準', 'Hake N-Gain 범주 기준'],
+  gh_ng_cat: ['KATEGORI', 'CATEGORY', 'カテゴリ', '범주'],
+  gh_ng_rng: ['NILAI N-GAIN', 'N-GAIN VALUE', 'N-gainの値', 'N-Gain 값'],
+  gh_ng_low: ['Rendah', 'Low', '低い', '낮음'],
+  gh_ng_mid: ['Sedang', 'Medium', '普通', '보통'],
+  gh_ng_high: ['Tinggi', 'High', '高い', '높음'],
+  gh_ng_low_r: ['g < 0,30', 'g < 0.30', 'g < 0.30', 'g < 0.30'],
+  gh_ng_mid_r: ['0,30 ≤ g ≤ 0,70', '0.30 ≤ g ≤ 0.70', '0.30 ≤ g ≤ 0.70', '0.30 ≤ g ≤ 0.70'],
+  gh_ng_high_r: ['g > 0,70', 'g > 0.70', 'g > 0.70', 'g > 0.70'],
+  gh_ng_f: ['Rumus: g = (Posttest − Pretest) / (100 − Pretest)', 'Formula: g = (Posttest − Pretest) / (100 − Pretest)', '計算式: g = (事後 − 事前) / (100 − 事前)', '공식: g = (사후 − 사전) / (100 − 사전)'],
+
+  set_voice_tt: ['Suara dan Guild Advisor', 'Sound and Guild Advisor', 'サウンドとギルドアドバイザー', '소리와 길드 어드바이저'],
+  set_adv: ['Guild Advisor: %s%', 'Guild Advisor: %s%', 'ギルドアドバイザー: %s%', '길드 어드바이저: %s%'],
+  adv_toggle: ['Tampilkan atau sembunyikan Guild Advisor', 'Show or hide the Guild Advisor', 'ギルドアドバイザーの表示／非表示', '길드 어드바이저 표시 또는 숨기기'],
+  set_adv_short: ['Advisor: %s%', 'Advisor: %s%', 'アドバイザー: %s%', '어드바이저: %s%'],
+  set_code_t: ['Kode Akses Guru', 'Teacher Access Code', '教師用アクセスコード', '교사 액세스 코드'],
+  set_code_d: [
+    'Bagikan kode ini hanya kepada guru lain yang berwenang. Siswa tidak memerlukannya.',
+    'Share this code only with other authorized teachers. Students do not need it.',
+    'このコードは権限のある他の教師にのみ共有してください。生徒には不要です。',
+    '이 코드는 권한이 있는 다른 교사에게만 공유하세요. 학생에게는 필요하지 않습니다.',
+  ],
+};
+
+window.T247 = (k, v) => {
+  const e = window.G247[k];
+  if (!e) return k;
+  const l = { id: 0, en: 1, ja: 2, ko: 3 }[(window.I18N && I18N.lang) || 'id'] || 0;
+  const s = e[l] != null ? e[l] : e[0];
+  return v ? s.replace(/%(\w+)%/g, (m, n) => (v[n] !== undefined && v[n] !== null ? v[n] : m)) : s;
+};

@@ -1,0 +1,38 @@
+.shadowsol { overflow: visible; filter: drop-shadow(0 0 7px rgba(180, 107, 255, 0.85)); }
+.shfig svg.shadowsol { filter: drop-shadow(0 0 14px #b46bff) drop-shadow(0 0 30px rgba(120, 70, 255, 0.7)); }
+.shcard.got { border-color: #b46bff; background: linear-gradient(180deg, rgba(120, 70, 255, 0.16), rgba(10, 15, 44, 0.9)); box-shadow: 0 0 22px rgba(180, 107, 255, 0.45), inset 0 0 18px rgba(154, 90, 255, 0.15); }
+.shcard.got .shfigw { width: 104px; }
+.shcard.got .shfigw svg { filter: drop-shadow(0 0 9px #b46bff); }
+.srow .sfig svg.shadowsol { filter: drop-shadow(0 0 5px #b46bff); }
+.ariseov .shfig.big { width: 190px; }
+@media (max-width: 480px) { .ariseov .shfig.big { width: 150px; } .shcard.got .shfigw { width: 92px; } }
+
+.mpad { display: block; margin: 6px 0 4px; text-align: left; font-weight: 500; }
+input:disabled + .mpad, textarea:disabled + .mpad { display: none; }
+.fills.has-mpad { grid-template-columns: 1fr; }
+.mp-pv { min-height: 34px; padding: 6px 10px; border: 1px dashed rgba(94, 230, 242, 0.55); border-radius: 8px; background: rgba(94, 230, 242, 0.06); overflow-x: auto; overflow-y: hidden; font-size: 1.12em; color: var(--tx); }
+.mp-pv[hidden], .mp-panel[hidden] { display: none; }
+.mp-pv .mp-l { padding: 1px 0; }
+.mp-ph { color: var(--mu); font-size: 13px; font-style: italic; }
+.mp-bar { margin-top: 6px; }
+.mp-tg { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; min-height: 36px; border-radius: 999px; border: 1px solid #b46bff; background: rgba(154, 90, 255, 0.14); color: var(--tx); font: 700 14px 'Rajdhani', sans-serif; cursor: pointer; }
+.mp-tg .mp-fx { font: 800 13px Orbitron, sans-serif; color: var(--cy); }
+.mp-tg:hover, .mp-tg.on { background: rgba(154, 90, 255, 0.34); box-shadow: 0 0 14px rgba(180, 107, 255, 0.55); }
+.mp-panel { margin-top: 8px; padding: 8px; border-radius: 12px; border: 1px solid #6a2fd0; background: rgba(8, 12, 40, 0.96); box-shadow: 0 0 18px rgba(120, 70, 255, 0.3); max-width: 420px; }
+.mp-row { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; margin-bottom: 5px; }
+.mp-k { min-width: 0; min-height: 40px; padding: 2px; border-radius: 8px; border: 1px solid #2a3a80; background: #0f1646; color: var(--tx); font: 700 16px 'Rajdhani', sans-serif; cursor: pointer; display: grid; place-items: center; touch-action: manipulation; }
+.mp-k:hover { border-color: var(--cy); background: #17216a; }
+.mp-k:active { transform: scale(0.94); background: #2a1a7a; }
+.mp-k .katex { font-size: 1.05em; }
+.mp-k.mp-var { color: var(--gold); font-style: italic; }
+.mp-k.mp-num { background: #0a0f2c; }
+.mp-k.mp-ctl { color: var(--cy); border-color: rgba(94, 230, 242, 0.5); }
+.mp-note { margin: 4px 2px 0; font-size: 12px; color: var(--mu); }
+@media (max-width: 400px) {
+  .mp-panel { padding: 6px; }
+  .mp-row { gap: 4px; margin-bottom: 4px; }
+  .mp-k { min-height: 42px; font-size: 15px; }
+  .mp-k .katex { font-size: 0.92em; }
+}
+
+#view .katex svg, .mpad .katex svg { height: inherit; max-width: none; }
